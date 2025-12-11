@@ -1,0 +1,19 @@
+# Enable CORS
+<IfModule mod_headers.c>
+    Header set Access-Control-Allow-Origin "*"
+    Header set Access-Control-Allow-Methods "GET, POST, PUT, DELETE, OPTIONS"
+    Header set Access-Control-Allow-Headers "Content-Type"
+</IfModule>
+
+# Prevent direct access to database file
+<Files "database.db">
+    Order allow,deny
+    Deny from all
+</Files>
+
+# Prevent access to config file
+<Files "config.php">
+    Order allow,deny
+    Deny from all
+</Files>
+

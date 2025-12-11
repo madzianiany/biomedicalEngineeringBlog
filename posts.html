@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Posty - Blog Magda Mikołowska</title>
+    <link rel="icon" type="image/svg+xml" href="images/logo.svg">
+    <link rel="alternate icon" href="images/logo.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style/main.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" crossorigin="anonymous"></script>
+    <script src="script/main.js"></script>
+    <script src="script/theme.js"></script>
+    <script src="script/auth.js"></script>
+    <script src="script/comments.js"></script>
+    <script src="script/posts.js"></script>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <img src="images/logo.svg" alt="Biomedical Engineering Blog Logo" class="logo-img">
+                    <a href="index.html" class="nav-link-home">Blog Inżynierii Biomedycznej</a>
+                </div>
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">Strona główna</a>
+                    </li>
+                    <li class="nav-item nav-item-posts" style="display: none;">
+                        <a href="posts.html" class="nav-link">Posty</a>
+                    </li>
+                    <li class="nav-item nav-auth">
+                        <button class="btn-theme-toggle" id="themeToggle" title="Przełącz tryb ciemny/jasny">🌙</button>
+                        <span class="user-info" style="display: none;"></span>
+                        <button class="btn-login" style="display: none;">Zaloguj się</button>
+                        <button class="btn-logout" style="display: none;">Wyloguj</button>
+                    </li>
+                </ul>
+                <div class="nav-toggle">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="post-modal" id="postModal" style="display: none;">
+            <div class="post-modal-content">
+                <span class="post-modal-close">&times;</span>
+                <h2 id="postModalTitle">Nowy post</h2>
+                <form id="postForm" class="post-form">
+                    <input type="hidden" id="postId" name="id">
+                    <div class="form-group">
+                        <label for="postTitle">Tytuł</label>
+                        <input type="text" id="postTitle" name="title" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="postContent">Treść</label>
+                        <textarea id="postContent" name="content" rows="10" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="postStatus">Status</label>
+                        <select id="postStatus" name="status">
+                            <option value="draft">Szkic</option>
+                            <option value="published">Opublikowany</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn-submit" id="postSubmitBtn">Utwórz</button>
+                    <div class="auth-message" id="postMessage"></div>
+                </form>
+            </div>
+        </div>
+        <section class="posts-section" id="postsSection">
+            <h2>Moje posty</h2>
+            <div id="postsContainer"></div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Blog. Wszelkie prawa zastrzeżone.</p>
+    </footer>
+</body>
+</html>
+
