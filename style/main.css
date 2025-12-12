@@ -333,7 +333,7 @@ footer {
     .post-modal-content, .auth-content { padding:20px; margin:20px; }
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 480px)  {
     .nav-container { padding:0 15px; }
     .hero { padding:40px 15px; }
     .hero h1 { font-size:28px; }
