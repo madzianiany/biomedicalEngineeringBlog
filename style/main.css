@@ -391,6 +391,7 @@ footer {
     font-size: 14px;
     transition: all 0.3s ease;
     background-color: var(--color-bg-white);
+    color: var(--color-text-primary);
 }
 
 .form-group input:focus {
